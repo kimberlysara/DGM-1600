@@ -5,6 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour {
 
 	public int health;
+	public LevelManager myLevelManager;
 	//public Sprite[] picture;
 	//private int count = 0; 
 	//private LevelManager levelManager;
@@ -14,6 +15,12 @@ public class Health : MonoBehaviour {
 
 	private void Start () {
 		ShowHearts ();
+	}
+
+	void OnDestroy (){
+		 
+			print ("lol");
+			LevelManager.manager.LevelLoad ("GameOver");
 	}
 
 	private void ShowHearts(){
@@ -27,6 +34,8 @@ public class Health : MonoBehaviour {
 			hearts [i].SetActive (true);
 		}
 	}
+
+
 
 	
 
@@ -58,3 +67,4 @@ public class Health : MonoBehaviour {
 
 }
 }
+

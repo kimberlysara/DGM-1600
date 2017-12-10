@@ -5,14 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-	public static int meteorCount;
+	public static GameObject player;
+	public static LevelManager manager;
 
-	void Start(){
-		meteorCount = FindObjectsOfType<Meteor> ().Length;
-		print (meteorCount);
-	} 
+
+	void Start() {
+		manager = this;
+		print ("Manager");
+		print (manager);
+	}
+
 
 	public void LevelLoad (string name) {
+
 		SceneManager.LoadScene (name);
 	}
 		
@@ -23,10 +28,9 @@ public class LevelManager : MonoBehaviour {
 	public void LoadNextLevel () {
 		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex + 1);
 	}
-	public void CheckMeteorCount (){
-		if (meteorCount <= 0) {
-			LoadNextLevel ();
-		}
-	}
+
+		
+			
+
 		}	
 
