@@ -68,16 +68,16 @@ public class Meteor : MonoBehaviour {
 	public void genPowerup(){
 		int roll = Random.Range (0, 100);
 		print (roll);
-		if (roll >= 70 && roll < 80) {
+		if (roll >=85  && roll < 90) {
 			GameObject obj = Instantiate (powerUps, transform.position, Quaternion.identity);
 			PowerUps pu = obj.GetComponent<PowerUps> ();
 			pu.powerupType = PowerUps.Type.fancy;
 		}
-		if (roll >= 80 && roll < 90) {
+		if (roll >= 90 && roll < 95) {
 			GameObject obj = Instantiate (powerUps, transform.position,Quaternion.identity);
 			PowerUps pu = obj.GetComponent<PowerUps> ();
 			pu.powerupType = PowerUps.Type.heart;
-		}if (roll >= 90 && roll < 100) {
+		}if (roll >= 95 && roll < 100) {
 			GameObject obj = Instantiate (powerUps, transform.position, Quaternion.identity);
 			PowerUps pu = obj.GetComponent<PowerUps> ();
 			pu.powerupType = PowerUps.Type.speed;
