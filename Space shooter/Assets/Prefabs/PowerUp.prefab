@@ -73,7 +73,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -108,7 +108,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1913442848574582}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 88869f794f994b742aaf20ef52c2a3cf, type: 2}
   m_CullingMode: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed0d9ff775ce7347afc92332266eef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupType: 1
+  powerupType: 0
   images:
   - {fileID: 21300000, guid: 689132c45c2641c4c9ff99cb8d57e83e, type: 3}
   - {fileID: 21300000, guid: e89fae7d5cd01a84fa0fd6eb1c972135, type: 3}

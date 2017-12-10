@@ -118,6 +118,7 @@ MonoBehaviour:
     type: 2}
   scoreboard: {fileID: 1694344737358008, guid: 4942d70128d551a429b76c0ef9906585, type: 2}
   scoreScript: {fileID: 0}
+  powerUps: {fileID: 1913442848574582, guid: 6fe42cba0e40e764e9002140ee005c4c, type: 2}
 --- !u!212 &212945855632235524
 SpriteRenderer:
   m_ObjectHideFlags: 1

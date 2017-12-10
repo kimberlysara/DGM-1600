@@ -8,7 +8,7 @@ public class AsteroidField : MonoBehaviour {
 	public Transform transform;
 	public float xMin;
 	public float xMax;
-	public const int maxCount = 10;
+	public int maxCount = Difficulty.maxMeteors;
 
 	void Start () {
 		transform = gameObject.GetComponent<Transform> ();
