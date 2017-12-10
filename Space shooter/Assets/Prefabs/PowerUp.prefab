@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1913442848574582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.3828797, y: -1.0700002, z: 0}
-  m_LocalScale: {x: 3.0774226, y: 2.2628107, z: 2.2628107}
+  m_LocalScale: {x: 63.57, y: 68.7, z: 65.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   powerupType: 0
   images:
   - {fileID: 21300000, guid: 689132c45c2641c4c9ff99cb8d57e83e, type: 3}
-  - {fileID: 21300000, guid: 71257da45b5a79c4f812b026f824079d, type: 3}
+  - {fileID: 21300000, guid: e89fae7d5cd01a84fa0fd6eb1c972135, type: 3}
   - {fileID: 21300000, guid: 8126f966edfc97540abd2966a49b71b4, type: 3}
 --- !u!212 &212921251512481638
 SpriteRenderer:

@@ -32,15 +32,20 @@ public class Meteor : MonoBehaviour {
 
 	void OnDestroy (){
 		count--;
+
 	}
 	private void OnCollisionEnter2D(Collision2D coll){
 		Debug.Log (coll.gameObject.name);
 		if (coll.gameObject.name == "player") {
 			coll.gameObject.GetComponent<Health>().IncrementHealth(-1);
 		}
+		if (coll.gameObject.name == "Laser(Clone)") {
+			ScoreBoard.AddPoints(10);
+		}
 		if (coll.gameObject.name != "Meteor(Clone)") {
 			DecrementHealth (1);
 		}
+	
 	}
 
 	public void DecrementHealth (int value){
@@ -52,10 +57,6 @@ public class Meteor : MonoBehaviour {
 		}
 	
 
-	}
-
-	private void IncrementScore(){
-		scoreboard.GetComponent<ScoreBoard> ().IncrementScoreBoard (10);
 	}
 
 }

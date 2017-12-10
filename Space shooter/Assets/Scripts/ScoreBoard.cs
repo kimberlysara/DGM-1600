@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreBoard : MonoBehaviour {
-	public int score;
+	public static int score = 0;
 	public Text display;
 	public Text highscoreDisplay;
 	public Text prevsScoreDisplay;
@@ -15,27 +15,41 @@ public class ScoreBoard : MonoBehaviour {
 			display.text = score.ToString ();
 		}
 		if (highscoreDisplay != null) {
-			highscoreDisplay.text = GetScore ().ToString ();
+			highscoreDisplay.text = GetHighScore ().ToString ();
 		}
-		if (prevsScoreDisplay != null)
-			prevsScoreDisplay.text = PlayerPrefs.GetInt ("PrevsScore").ToString ();
+		if (prevsScoreDisplay != null) {
+			prevsScoreDisplay.text = score.ToString ();
+		}
 	}
 	
-	public void IncrementScoreBoard(int value){
+	public static void AddPoints(int value){
 		score += value;
-		display.text = score.ToString ();
-}
+		print ("Score: " + score.ToString ());
+	}
+
+	void Update() {
+		if (display != null) {
+			display.text = score.ToString ();
+		}
+		if (highscoreDisplay != null) {
+			highscoreDisplay.text = GetHighScore ().ToString ();
+		}
+		if (prevsScoreDisplay != null) {
+			prevsScoreDisplay.text = score.ToString ();
+		}
+	}
+
 	public void SaveScore(){
 		//Check Prevoius score
-		int oldScore = GetScore();
-		PlayerPrefs.SetInt ("PrevsScore", oldScore);
+		int highScore = GetHighScore();
+		PlayerPrefs.SetInt ("PrevsScore", score);
 
 		//if new score is higher
-		if (score > oldScore) {
+		if (score > highScore) {
 			PlayerPrefs.SetInt ("HighScore", score);
 		}
 	}
-	public int GetScore(){
+	public int GetHighScore(){
 		return PlayerPrefs.GetInt ("HighScore");
 	
 	}
