@@ -27,13 +27,10 @@ public class Health : MonoBehaviour {
 			hearts [i].SetActive (true);
 		}
 	}
-	//void OnCollisionEnter2D (Collision2D myCollider){
 
-	//	health--;
-//		count++;
-	//	if (count > picture.Length - 1) {
-	//		count--;
-//		}
+	
+
+	
 
 
 	
@@ -59,5 +56,5 @@ public class Health : MonoBehaviour {
 		return health; 
 		
 
-	}
+}
 }
