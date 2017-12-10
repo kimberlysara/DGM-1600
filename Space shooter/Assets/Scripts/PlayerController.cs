@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour {
 	public float shotForce;
 
 	void Start () {
-		
+
+		print (GetComponent<Health>().GetHealth() ); 
 	}
 
 
@@ -26,38 +27,20 @@ public class PlayerController : MonoBehaviour {
 			transform.position += move * speed * Time.deltaTime;
 		//check for button push
 		if (Input.GetKey (KeyCode.A)) {
-			//Vector3 position = this.transform.position;
-			//position.x--;
-			//this.transform.position = position;
 			particles.Emit (1);
 		}
 
 		if (Input.GetKey (KeyCode.D)) {
-			//Vector3 position = this.transform.position;
-			//position.x++;
-			//this.transform.position = position;
 		particles.Emit (1);
 		}
 
 
 		if (Input.GetKey(KeyCode.S)) {
-		//	Vector3 position = this.transform.position;
-		//	position.y--;
-			//this.transform.position = position;
 			particles.Emit (1);
 	}
-	if (Input.GetKey(KeyCode.W)) {
-		//	Vector3 position = this.transform.position;
-		//	position.y++;
-		//	this.transform.position = position;
-		particles.Emit (1);
+		if (Input.GetKey (KeyCode.W)) {
+			particles.Emit (1);
 		}
-
-	//else {
-	//	particles.Stop ();
-
-	//}
-
 		if (Input.GetButtonUp ("Fire1")) {
 		GameObject shot = Instantiate (projectile, shotPos.position, shotPos.rotation) as GameObject; 
 			shot.GetComponent<Rigidbody2D> ().AddForce (shotPos.up * shotForce);

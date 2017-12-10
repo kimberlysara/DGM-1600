@@ -20,10 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4710924265956318}
   - component: {fileID: 212945855632235524}
-  - component: {fileID: 50613196591036294}
   - component: {fileID: 60267411899260142}
-  - component: {fileID: 114683198528860830}
   - component: {fileID: 114606656990729896}
+  - component: {fileID: 50523186313125720}
   m_Layer: 10
   m_Name: Meteor
   m_TagString: Untagged
@@ -44,25 +43,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50613196591036294
+--- !u!50 &50523186313125720
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1848412254234530}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &60267411899260142
 PolygonCollider2D:
@@ -114,19 +113,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingSpin: 0.5
---- !u!114 &114683198528860830
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1848412254234530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6db9dca73b6e6040b8644db24ca73bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  picture: []
+  health: 2
+  explosionEffect: {fileID: 1120682404182362, guid: 8179d3332e55fb343955e04e164daa46,
+    type: 2}
 --- !u!212 &212945855632235524
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -158,7 +147,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 71223a04ec9568b4d90c0a96c7434761, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -5,30 +5,59 @@ using UnityEngine;
 public class Health : MonoBehaviour {
 
 	public int health;
-	public Sprite[] picture;
-	private int count = 0; 
-	private LevelManager levelManager;
+	//public Sprite[] picture;
+	//private int count = 0; 
+	//private LevelManager levelManager;
+	public GameObject explosionEffect;
+	public GameObject[] hearts;
 
 
-	void Start () {
-		levelManager = FindObjectOfType<LevelManager> ();	
+	private void Start () {
+		ShowHearts ();
 	}
-	
-	void OnCollisionEnter2D (Collision2D myCollider){
 
-		health--;
-		count++;
-		if (count > picture.Length - 1) {
-			count--;
+	private void ShowHearts(){
+		//turn hearts off
+		for (int i = 0; i < hearts.Length; i++) {
+			hearts [i].SetActive (false);
 		}
+
+		//turn hearts on
+		for (int i = 0; i < health; i++) {
+			hearts [i].SetActive (true);
+		}
+	}
+	//void OnCollisionEnter2D (Collision2D myCollider){
+
+	//	health--;
+//		count++;
+	//	if (count > picture.Length - 1) {
+	//		count--;
+//		}
+
+
 	
-		GetComponent<SpriteRenderer> ().sprite = picture [count];
-		if (health <= 0) {
-			LevelManager.meteorCount--;
-			levelManager.CheckMeteorCount ();
-			Destroy (this.gameObject);
+		//GetComponent<SpriteRenderer> ().sprite = picture [count];
+		//if (health <= 0) {
+		//	LevelManager.meteorCount--;
+		//	levelManager.CheckMeteorCount ();
+		//	Destroy (this.gameObject);
 			
-		}
-	}
+		//}
+	//}
 
+	public void IncrementHealth (int value){
+		health += value;
+		if (health <= 0) {
+			Destroy (gameObject);
+			Instantiate (explosionEffect, transform.position, Quaternion.identity);
+
+		}
+		ShowHearts ();
+	}
+	public int GetHealth() {
+		return health; 
+		
+
+	}
 }
