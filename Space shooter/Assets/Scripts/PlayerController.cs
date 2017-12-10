@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
 	public float speedTimer;
 	public float laserTimer;
 	public float fireRate;
-
+	public float enhancedLaserTimer;
 	public ParticleSystem particles;
 
 	public GameObject projectile;
@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		fireRate = 0.8f;
 		print (GetComponent<Health>().GetHealth() ); 
+	}
+	public void enhancedLaser (){
+		fireRate = 0.4f;
+		enhancedLaserTimer = 5.0f;
 	}
 
 	public void speedBoost (){
@@ -41,6 +45,12 @@ public class PlayerController : MonoBehaviour {
 		if (laserTimer > 0) {
 			laserTimer -= Time.deltaTime;
 
+		}
+		if (enhancedLaserTimer > 0) {
+			enhancedLaserTimer -= Time.deltaTime;
+			if (enhancedLaserTimer <= 0) {
+				fireRate = 0.8f;
+			}
 		}
 	
 		var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);

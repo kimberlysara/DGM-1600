@@ -35,6 +35,7 @@ public class Meteor : MonoBehaviour {
 
 	}
 	private void OnCollisionEnter2D(Collision2D coll){
+		print ("hi");
 		Debug.Log (coll.gameObject.name);
 		if (coll.gameObject.name == "player") {
 			coll.gameObject.GetComponent<Health>().IncrementHealth(-1);

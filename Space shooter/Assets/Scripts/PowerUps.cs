@@ -42,7 +42,7 @@ public class PowerUps : MonoBehaviour {
 
 			break;
 		case Type.fancy:
-			
+			other.GetComponent<PlayerController> ().enhancedLaser();
 			break;
 		case Type.heart:
 			Health health = other.GetComponent (typeof(Health)) as Health;
