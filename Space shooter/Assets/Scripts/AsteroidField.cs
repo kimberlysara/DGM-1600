@@ -9,13 +9,22 @@ public class AsteroidField : MonoBehaviour {
 	public float xMin;
 	public float xMax;
 	public int maxCount = Difficulty.maxMeteors;
-
+	public float spawnTimer;
+	public float spawnRate;
 	void Start () {
 		transform = gameObject.GetComponent<Transform> ();
-		InvokeRepeating ("spawnRandom", 0f, 1.0f);
+		//InvokeRepeating ("spawnRandom", 0f, 1.0f);
+		spawnTimer = 1.0f;
+		spawnRate = 1.0f;
 	}
 	void Update (){
-
+		if (spawnTimer >= 0) {
+			spawnTimer -= Time.deltaTime;
+			if (spawnTimer <= 0) {
+				spawnRandom();
+				spawnTimer = spawnRate; 
+			}
+		}
 	}
 	void spawnRandom (){
 		if (Meteor.count < maxCount) {
