@@ -51,8 +51,10 @@ public class Meteor : MonoBehaviour {
 	public void DecrementHealth (int value){
 		health -= value;
 		if (health <= 0) {
+			GameObject explosion = Instantiate (explosionEffect, transform.position, Quaternion.identity);
+			//explosion.velocity = gameObject.velocity;
+			//GetComponent<Rigidbody2D> ();
 			Destroy (gameObject);
-			Instantiate (explosionEffect, transform.position, Quaternion.identity);
 			//IncrementScore();
 		}
 	

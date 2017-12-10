@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 	//public Vector3 velocity;
 	public float shipSpeed;
-	public float speed = 1.0f;
+	public float speed = 200.0f;
+	public const float startSpeed = 200.0f;
+	public float speedTimer;
 
 	public ParticleSystem particles;
 
@@ -18,11 +20,21 @@ public class PlayerController : MonoBehaviour {
 		print (GetComponent<Health>().GetHealth() ); 
 	}
 
-
+	public void speedBoost (){
+		//print (speed);
+	   speed *= 2;
+		speedTimer = 3.0f;
+	}
 
 
 	// Update is called once per frame
 	void Update () {
+		if (speedTimer > 0) {
+			speedTimer -= Time.deltaTime;
+			if (speedTimer <= 0) {
+				speed = startSpeed;
+			}
+		}
 		var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 			transform.position += move * speed * Time.deltaTime;
 		//check for button push

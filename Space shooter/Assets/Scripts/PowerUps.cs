@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUps : MonoBehaviour {
 
-	public enum Type {fancy, shield, speed};
+	public enum Type {fancy, heart, speed};
 	public Type powerupType;
 	public Sprite[] images;
 
@@ -15,7 +15,7 @@ public class PowerUps : MonoBehaviour {
 			case Type.fancy:
 				gameObject.GetComponent<SpriteRenderer> ().sprite = images [0];
 				break;
-		case Type.shield:
+		case Type.heart:
 			gameObject.GetComponent<SpriteRenderer> ().sprite = images [1];
 			break;
 
@@ -37,13 +37,17 @@ public class PowerUps : MonoBehaviour {
 	//	if (powerupType == Type.speed) {
 		switch (powerupType) {
 		case Type.speed:
-			other.GetComponent<PlayerController> ().speed *= 2;
+			
+			other.GetComponent<PlayerController> ().speedBoost();
+
 			break;
 		case Type.fancy:
 			
 			break;
-		case Type.shield:
-			
+		case Type.heart:
+			Health health = other.GetComponent (typeof(Health)) as Health;
+			health.IncrementHealth (1);
+		
 			break;
 		default:
 			break;
@@ -52,5 +56,5 @@ public class PowerUps : MonoBehaviour {
 	}
 		Destroy (this.gameObject);
 
-}
+	}
 }

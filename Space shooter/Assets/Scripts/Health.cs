@@ -11,10 +11,13 @@ public class Health : MonoBehaviour {
 	//private LevelManager levelManager;
 	public GameObject explosionEffect;
 	public GameObject[] hearts;
+	public int max;
 
 
 	private void Start () {
+		max = 5;
 		ShowHearts ();
+
 	}
 
 	void OnDestroy (){
@@ -37,23 +40,11 @@ public class Health : MonoBehaviour {
 
 
 
-	
-
-	
-
-
-	
-		//GetComponent<SpriteRenderer> ().sprite = picture [count];
-		//if (health <= 0) {
-		//	LevelManager.meteorCount--;
-		//	levelManager.CheckMeteorCount ();
-		//	Destroy (this.gameObject);
-			
-		//}
-	//}
-
 	public void IncrementHealth (int value){
-		health += value;
+		if (health + value <= max) {
+
+			health += value;
+		}
 		if (health <= 0) {
 			Destroy (gameObject);
 			Instantiate (explosionEffect, transform.position, Quaternion.identity);
