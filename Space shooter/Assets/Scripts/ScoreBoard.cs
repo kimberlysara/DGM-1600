@@ -14,7 +14,7 @@ public class ScoreBoard : MonoBehaviour {
 		if (display != null) {
 			display.text = score.ToString ();
 		}
-		if (display != null) {
+		if (highscoreDisplay != null) {
 			highscoreDisplay.text = GetScore ().ToString ();
 		}
 		if (prevsScoreDisplay != null)

@@ -18,11 +18,14 @@ public class Meteor : MonoBehaviour {
 		rigid = GetComponent<Rigidbody2D> ();
 		rigid.AddTorque (Random.Range (-startingSpin, startingSpin), ForceMode2D.Impulse);
 		scoreScript = FindObjectOfType<ScoreBoard>();
-		Vector3 force = new Vector3(0,-Random.Range(0.9f,5f), 0);
+		Vector3 force = new Vector3(0,-Random.Range(35f,150f), 0);
 		rigid.velocity = force;
+
+		float scale = Random.Range (33f,50f);
+		rigid.transform.localScale = new Vector3(scale,scale,scale);
 	}
 	void Update (){
-		if ((Mathf.Abs(rigid.transform.position.x) >= 15) || (Mathf.Abs(rigid.transform.position.y) >= 15)) {
+		if ((Mathf.Abs(rigid.transform.position.x) >= 225) || (Mathf.Abs(rigid.transform.position.y) >= 225)) {
 			Destroy (gameObject);
 		}
 	}
