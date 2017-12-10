@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUps : MonoBehaviour {
 
-	public enum Type {fancy ,shield, speed};
+	public enum Type {fancy, shield, speed};
 	public Type powerupType;
 	public Sprite[] images;
 

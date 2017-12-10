@@ -10,19 +10,33 @@ public class Meteor : MonoBehaviour {
 	private Rigidbody2D rigid; 
 	public GameObject scoreboard;
 	public ScoreBoard scoreScript;
+	public static int count = 0;
 	//public Text scoreBoard;
 
 	void Start () {
-		GetComponent<Rigidbody2D> ().AddTorque (Random.Range (-startingSpin, startingSpin), ForceMode2D.Impulse);
+		count++;
+		rigid = GetComponent<Rigidbody2D> ();
+		rigid.AddTorque (Random.Range (-startingSpin, startingSpin), ForceMode2D.Impulse);
 		scoreScript = FindObjectOfType<ScoreBoard>();
+		Vector3 force = new Vector3(0,-Random.Range(0.9f,5f), 0);
+		rigid.velocity = force;
+	}
+	void Update (){
+		if ((Mathf.Abs(rigid.transform.position.x) >= 15) || (Mathf.Abs(rigid.transform.position.y) >= 15)) {
+			Destroy (gameObject);
+		}
 	}
 
+	void OnDestroy (){
+		count--;
+	}
 	private void OnCollisionEnter2D(Collision2D coll){
-		coll.gameObject.GetComponent<Health>().IncrementHealth(-1);
+	//	coll.gameObject.GetComponent<Health>().DecrementHealth(1);
+		DecrementHealth(1);
 	}
 
-	public void IncrementHealth (int value){
-		health += value;
+	public void DecrementHealth (int value){
+		health -= value;
 		if (health <= 0) {
 			Destroy (gameObject);
 			Instantiate (explosionEffect, transform.position, Quaternion.identity);

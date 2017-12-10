@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreBoard : MonoBehaviour {
-	public Text score;
+	public int score;
 	public Text display;
 	public Text highscoreDisplay;
 	public Text prevsScoreDisplay;

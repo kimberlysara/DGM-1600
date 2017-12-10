@@ -15,12 +15,12 @@ public class Laser : MonoBehaviour {
 		if (lifetime <= 0) {
 			Destroy (this.gameObject);
 		}
+		}
 
 		//transform.Translate (Vector3.up * speed * Time.deltaTime);
-	}
+
 
 	void OnCollisionEnter2D (Collision2D other){
-		other.gameObject.GetComponent<Health>().IncrementHealth(damage);
 		Destroy (this.gameObject);
 	}
-}
+ }

@@ -50,14 +50,14 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1848412254234530}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -113,9 +113,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingSpin: 0.5
-  health: 2
+  health: 1
   explosionEffect: {fileID: 1120682404182362, guid: 8179d3332e55fb343955e04e164daa46,
     type: 2}
+  scoreboard: {fileID: 0}
+  scoreScript: {fileID: 0}
 --- !u!212 &212945855632235524
 SpriteRenderer:
   m_ObjectHideFlags: 1
