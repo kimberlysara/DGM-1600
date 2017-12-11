@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 	//public Vector3 velocity;
@@ -16,22 +17,27 @@ public class PlayerController : MonoBehaviour {
 	public GameObject projectile;
 	public Transform shotPos;
 	public float shotForce;
-	public GameObject laserCounter;
+	public Text laserCounter;
+	public int laserLevel;
+	public float horizontalRadius;
+	public float verticalRadius;
 
 	void Start () {
+		laserLevel = 0;
 		speedIcon.SetActive (false);
 		fireRate = 0.8f;
 		print (GetComponent<Health>().GetHealth() ); 
 	}
 	public void enhancedLaser (){
-		fireRate = 0.4f;
-		enhancedLaserTimer = 5.0f;
+		fireRate += 0.4f; 
+		laserLevel += 1; 
+		//enhancedLaserTimer = 5.0f;
 	}
 
 	public void speedBoost (){
 		//print (speed);
 	   speed += 100f;
-		speedTimer = 3.0f;
+		speedTimer = 6.0f;
 
 		speedIcon.SetActive (true);
 	}
@@ -39,6 +45,9 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		laserCounter.text = laserLevel.ToString ();
+
+
 		if (speedTimer > 0) {
 			speedTimer -= Time.deltaTime;
 			if (speedTimer <= 0) {
@@ -50,15 +59,17 @@ public class PlayerController : MonoBehaviour {
 			laserTimer -= Time.deltaTime;
 
 		}
-		if (enhancedLaserTimer > 0) {
-			enhancedLaserTimer -= Time.deltaTime;
-			if (enhancedLaserTimer <= 0) {
-				fireRate = 0.8f;
-			}
-		}
+		//if (enhancedLaserTimer > 0) {
+		//	enhancedLaserTimer -= Time.deltaTime;
+			//if (enhancedLaserTimer <= 0) {
+			//	fireRate = 0.8f;
+			//}
+		//}
 	
 		var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 			transform.position += move * speed * Time.deltaTime;
+
+
 		//check for button push
 		if (Input.GetKey (KeyCode.A)) {
 			particles.Emit (1);
@@ -88,6 +99,7 @@ public class PlayerController : MonoBehaviour {
 		//default:
 		//	break;
 		//}
+
 	}
 				
 	}
