@@ -12,12 +12,14 @@ public class PlayerController : MonoBehaviour {
 	public float fireRate;
 	public float enhancedLaserTimer;
 	public ParticleSystem particles;
-
+	public GameObject speedIcon; 
 	public GameObject projectile;
 	public Transform shotPos;
 	public float shotForce;
+	public GameObject laserCounter;
 
 	void Start () {
+		speedIcon.SetActive (false);
 		fireRate = 0.8f;
 		print (GetComponent<Health>().GetHealth() ); 
 	}
@@ -28,9 +30,10 @@ public class PlayerController : MonoBehaviour {
 
 	public void speedBoost (){
 		//print (speed);
-	   speed *= 2;
+	   speed += 100f;
 		speedTimer = 3.0f;
 
+		speedIcon.SetActive (true);
 	}
 
 
@@ -40,6 +43,7 @@ public class PlayerController : MonoBehaviour {
 			speedTimer -= Time.deltaTime;
 			if (speedTimer <= 0) {
 				speed = startSpeed;
+				speedIcon.SetActive (false);
 			}
 		}
 		if (laserTimer > 0) {

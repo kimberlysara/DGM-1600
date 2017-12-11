@@ -108,7 +108,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1913442848574582}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 88869f794f994b742aaf20ef52c2a3cf, type: 2}
   m_CullingMode: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerupType: 0
   images:
-  - {fileID: 21300000, guid: 689132c45c2641c4c9ff99cb8d57e83e, type: 3}
+  - {fileID: 21300000, guid: e2c099a4aec839f4698192d02778cdbf, type: 3}
   - {fileID: 21300000, guid: e89fae7d5cd01a84fa0fd6eb1c972135, type: 3}
   - {fileID: 21300000, guid: 8126f966edfc97540abd2966a49b71b4, type: 3}
 --- !u!212 &212921251512481638

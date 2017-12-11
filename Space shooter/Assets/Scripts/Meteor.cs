@@ -22,7 +22,7 @@ public class Meteor : MonoBehaviour {
 		Vector3 force = new Vector3(0,-Random.Range(35f,150f), 0);
 		rigid.velocity = force;
 
-		float scale = Random.Range (33f,50f);
+		float scale = Random.Range (33f,80f);
 		rigid.transform.localScale = new Vector3(scale,scale,scale);
 	}
 	void Update (){
@@ -66,18 +66,18 @@ public class Meteor : MonoBehaviour {
 
 	}
 	public void genPowerup(){
-		int roll = Random.Range (0, 100);
+		int roll = Random.Range (0, 120);
 		print (roll);
-		if (roll >=85  && roll < 90) {
+		if (roll >=70  && roll < 80) {
 			GameObject obj = Instantiate (powerUps, transform.position, Quaternion.identity);
 			PowerUps pu = obj.GetComponent<PowerUps> ();
 			pu.powerupType = PowerUps.Type.fancy;
 		}
-		if (roll >= 90 && roll < 95) {
+		if (roll >= 80 && roll < 90) {
 			GameObject obj = Instantiate (powerUps, transform.position,Quaternion.identity);
 			PowerUps pu = obj.GetComponent<PowerUps> ();
 			pu.powerupType = PowerUps.Type.heart;
-		}if (roll >= 95 && roll < 100) {
+		}if (roll >= 90 && roll < 100) {
 			GameObject obj = Instantiate (powerUps, transform.position, Quaternion.identity);
 			PowerUps pu = obj.GetComponent<PowerUps> ();
 			pu.powerupType = PowerUps.Type.speed;
