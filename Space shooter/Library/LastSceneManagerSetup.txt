@@ -8,24 +8,6 @@ sceneSetups:
 - path: Assets/_Scenes/GameOver.unity
   isLoaded: 0
   isActive: 0
-- path: Assets/_Scenes/GameOver.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/_Scenes/GameOver.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/_Scenes/GameOver.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/_Scenes/GameOver.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/_Scenes/GameOver.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/_Scenes/GameOver.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/_Scenes/Menu.unity
+- path: Assets/_Scenes/Level01.unity
   isLoaded: 1
   isActive: 1

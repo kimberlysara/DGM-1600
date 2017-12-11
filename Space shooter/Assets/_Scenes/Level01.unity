@@ -370,7 +370,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -666103322
+  randomSeed: 74288133
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3752,6 +3752,7 @@ MonoBehaviour:
   enhancedLaserTimer: 0
   particles: {fileID: 2003768697}
   speedIcon: {fileID: 477119057}
+  laserReadyIcon: {fileID: 1738654265}
   projectile: {fileID: 1031323499130810, guid: da1efb5d3d5069b41a0fa7fe84672260, type: 2}
   shotPos: {fileID: 1603771632}
   shotForce: 1000
@@ -3999,7 +4000,7 @@ Prefab:
     - target: {fileID: 224419851471299344, guid: 7d201c7d4309b97499bba119688453fc,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.445
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224419851471299344, guid: 7d201c7d4309b97499bba119688453fc,
         type: 2}
@@ -4314,7 +4315,7 @@ Prefab:
     - target: {fileID: 224419851471299344, guid: 7d201c7d4309b97499bba119688453fc,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.445
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224419851471299344, guid: 7d201c7d4309b97499bba119688453fc,
         type: 2}
@@ -4419,7 +4420,7 @@ Prefab:
     - target: {fileID: 224419851471299344, guid: 7d201c7d4309b97499bba119688453fc,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.445
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224419851471299344, guid: 7d201c7d4309b97499bba119688453fc,
         type: 2}
@@ -4688,7 +4689,7 @@ Prefab:
     - target: {fileID: 224419851471299344, guid: 7d201c7d4309b97499bba119688453fc,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.445
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224419851471299344, guid: 7d201c7d4309b97499bba119688453fc,
         type: 2}
@@ -4827,6 +4828,7 @@ RectTransform:
   - {fileID: 477119058}
   - {fileID: 257450688}
   - {fileID: 1783900477}
+  - {fileID: 1738654266}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4835,6 +4837,74 @@ RectTransform:
   m_AnchoredPosition: {x: 2, y: 0.5}
   m_SizeDelta: {x: 524, y: 393}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1738654265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1738654266}
+  - component: {fileID: 1738654268}
+  - component: {fileID: 1738654267}
+  m_Layer: 5
+  m_Name: laserReady
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1738654266
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1738654265}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.077661894, y: 0.19999999, z: 0.19999999}
+  m_Children: []
+  m_Father: {fileID: 1649420162}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -202.1, y: 114.5}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1738654267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1738654265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 09511b6eb6f02f74fa94fecca3debcff, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1738654268
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1738654265}
 --- !u!1 &1783900476
 GameObject:
   m_ObjectHideFlags: 0
@@ -5025,7 +5095,7 @@ Prefab:
     - target: {fileID: 224419851471299344, guid: 7d201c7d4309b97499bba119688453fc,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.445
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224419851471299344, guid: 7d201c7d4309b97499bba119688453fc,
         type: 2}
@@ -5301,7 +5371,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1051231054
+  randomSeed: -297490247
   InitialModule:
     serializedVersion: 3
     enabled: 1

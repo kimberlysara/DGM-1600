@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour {
 	public float fireRate;
 	public float enhancedLaserTimer;
 	public ParticleSystem particles;
-	public GameObject speedIcon; 
+	public GameObject speedIcon;
+	public GameObject laserReadyIcon;
 	public GameObject projectile;
 	public Transform shotPos;
 	public float shotForce;
@@ -25,11 +26,12 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		laserLevel = 0;
 		speedIcon.SetActive (false);
+		laserReadyIcon.SetActive (false);
 		fireRate = 0.8f;
 		print (GetComponent<Health>().GetHealth() ); 
 	}
 	public void enhancedLaser (){
-		fireRate += 0.4f; 
+		fireRate -= 0.2f; 
 		laserLevel += 1; 
 		//enhancedLaserTimer = 5.0f;
 	}
@@ -57,7 +59,9 @@ public class PlayerController : MonoBehaviour {
 		}
 		if (laserTimer > 0) {
 			laserTimer -= Time.deltaTime;
-
+			if (laserTimer <= 0) {
+				laserReadyIcon.SetActive (true);
+			}
 		}
 		//if (enhancedLaserTimer > 0) {
 		//	enhancedLaserTimer -= Time.deltaTime;
@@ -86,11 +90,12 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKey (KeyCode.W)) {
 			particles.Emit (1);
 		}
-		if (Input.GetButtonUp ("Fire1")) {
+		if (Input.GetButtonUp ("Fire1") || Input.GetKeyUp(KeyCode.Space)) {
 			if (laserTimer <= 0){
 		GameObject shot = Instantiate (projectile, shotPos.position, shotPos.rotation) as GameObject; 
 			shot.GetComponent<Rigidbody2D> ().AddForce (shotPos.up * shotForce);
 				laserTimer = fireRate;
+				laserReadyIcon.SetActive (false);
 				//shotPos.AddForce (shotPos.forward * shotForce)
 			}
 		}
